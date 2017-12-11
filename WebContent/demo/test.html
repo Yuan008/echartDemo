@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- 引入ECharts文件 -->
+	<script type="text/javascript" src = "../echarts.js"></script>
+</head>
+<body>
+	<div id="main" style="width:600px;height:400px;"></div>
+	<script type="text/javascript">
+		var demo = echarts.init(document.getElementById("main"));
+		// 指定图表的配置项和数据
+        var option = {
+        	    title: {
+        	        text: '借据余额总额',
+        	        show: true,
+        	        link: href="../index.html",
+        	        x: 'center',
+        	        y: 0
+        	    },
+        	    tooltip: {},//图标悬停提示内容
+        	    legend: {
+        	        //data:['余额']
+        	    },
+        	    toolbox: {  
+                    show : true,  
+                    feature : {  
+                        mark : {show: true},  
+                        dataView : {show: true, readOnly: false},  
+                        magicType : {show: true, type: ['line', 'bar']},  //图形切换
+                        restore : {show: true},  
+                        saveAsImage : {show: true}  
+                    }  
+                },
+        	    xAxis: {
+        	        data: ["张三","李四","王五","赵麻子"]
+        	    },
+        	    yAxis: {},
+        	    series: [{
+        	        name: '总余额',
+        	        type: 'bar',
+        	        data: [80, 20, 36, 90]
+        	    }]
+        	};
+     	// 使用刚指定的配置项和数据显示图表。
+        demo.setOption(option);
+	</script>
+</body>
+</html>
